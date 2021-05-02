@@ -1,10 +1,12 @@
 import AuthState from "../context/auth/authState";
-
+import AppState from "../context/app/appState";
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <AuthState>
-      <Component {...pageProps} />
-    </AuthState>
+    <AppState>
+      <AuthState>
+        <Component {...pageProps} />
+      </AuthState>
+    </AppState>
   );
 };
 
